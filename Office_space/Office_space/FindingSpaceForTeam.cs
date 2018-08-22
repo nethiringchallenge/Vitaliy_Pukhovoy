@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 [assembly: InternalsVisibleTo("OfficeSpaceUnitTest")]
-namespace Office_space
+namespace OfficeSpace
 {
-    class FindingSpaceForTeam : IFindingSpace, IFillingData
+   public  class FindingSpaceForTeam : IFindingSpace, IFillingData
     {
-        public void Method(Dictionary<int, int> dic, int[] flour, int k, int rest)
+        private Dictionary<int, int> dic;
+
+        public FindingSpaceForTeam()
+        {
+           dic = new Dictionary<int, int>();
+        }
+
+        public void Method( int[] flour, int k, int rest)
         {
             int allFlour = 0;
             try
@@ -47,14 +52,14 @@ namespace Office_space
                 if (dic.TakeWhile(r => r.Value < rest && r.Value != 0).Count() == 0 && k < flour.Count())
                 {
                     k++;
-                    Method(dic, flour, k, rest = 0);
+                    Method(flour, k, rest = 0);
                 }
 
-                Method(dic, flour, k, rest);
+                Method(flour, k, rest);
             }
         }
 
-        public void AddCubicleToDictionary(Dictionary<int, int> dic, int[] data, int[] cubicles, int cubicle, int personInTeam)
+        public void AddCubicleToDictionary(int[] data, int[] cubicles, int cubicle, int personInTeam)
         {
             if (data.Count() != 0)
                 Array.ForEach(data, d => dic.Add(d, cubicles.SkipWhile(i => i < d * personInTeam).ToArray()[0] / cubicle));
@@ -62,10 +67,9 @@ namespace Office_space
                 Console.WriteLine("Bitte enter data");
         }
 
-        public void AddDataManually(Dictionary<int, int> dic, int[] cubicles, int cubicle, int personInTeam)
+        public void AddDataManually(int[] cubicles, int cubicle, int personInTeam)
         {
-            string line;
-            //enter manually
+            string line;          
             while ((line = Console.ReadLine()) != null && line != "")
             {
                 int el = int.Parse(line) * 7;
