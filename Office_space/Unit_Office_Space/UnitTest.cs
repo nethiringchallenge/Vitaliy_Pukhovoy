@@ -1,14 +1,19 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
+using OfficeSpace;
 
-namespace Unit_Office_Space
+
+namespace OfficeSpaceUnitTest
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class UnitTest
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
-        {
+        {          
+
+
         }
     }
 }
