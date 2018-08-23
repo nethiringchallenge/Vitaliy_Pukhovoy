@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Unit_Office_Space")]
+[assembly: InternalsVisibleTo("OfficeSpace.UnitTest")]
 namespace OfficeSpace
 {
    internal  class FindingSpaceForTeam : IFindingSpace
@@ -12,7 +12,7 @@ namespace OfficeSpace
         private int[] cubicles;
         private int cubicle, personInTeam;        
 
-        public FindingSpaceForTeam(Dictionary<int, int> _dic, int[] _cubicles, int _cubicle, int _personInTeam)
+        public  FindingSpaceForTeam(Dictionary<int, int> _dic, int[] _cubicles, int _cubicle, int _personInTeam)
         {
            dic = _dic;
            cubicles = _cubicles;
@@ -20,7 +20,7 @@ namespace OfficeSpace
            personInTeam = _personInTeam;
         }
 
-        public void Method( int[] flour, int k, int rest)
+        public virtual void Method( int[] flour, int k, int rest)
         {
             int allFlour = 0;
             try

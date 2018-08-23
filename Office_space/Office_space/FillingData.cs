@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Unit_Office_Space")]
+[assembly: InternalsVisibleTo("OfficeSpace.UnitTest")]
 namespace OfficeSpace
 {
    internal class FillingData : IFillingData
