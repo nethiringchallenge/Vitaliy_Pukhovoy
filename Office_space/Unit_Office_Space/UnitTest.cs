@@ -12,6 +12,7 @@ namespace OfficeSpaceUnitTest
     public class UnitTest
     {
         private FindingSpaceForTeam sp;      // main class fpr finding space
+        private FillingData dat;
         private int[] flour = new int[3];   // number of cubicles on each flour
         private int count = 16;             // number cubicles on one flour
         private int rest = 0;               //rest cubicles on flour
@@ -20,18 +21,20 @@ namespace OfficeSpaceUnitTest
         private int cubicle = 4;
         private int personInTeam = 7;
         private int[] data = { 2, 3, 6, 8, 5 };
-        private Dictionary<int, int> dic;
+        private Dictionary<int, int> dic;   
+        
 
         public UnitTest()
         {
             int[] cubicles = Enumerable.Range(4, 64).Where(c => c % 4 == 0).ToArray();
             sp =   new FindingSpaceForTeam(dic, cubicles, cubicle, personInTeam);
+            dat = new FillingData(dic);
             flour = Enumerable.Repeat(count, 3).ToArray();
         }
         [Test]
         public void TestMethod1()
         {
-            Assert.Catch<Exception>(() => sp.AddCubicleToDictionary(data));
+            Assert.Catch<Exception>(() => dat.AddCubicleToDictionary(data, cubicles, cubicle, personInTeam));
         }
 
         [Test]
@@ -44,7 +47,7 @@ namespace OfficeSpaceUnitTest
         [Test]
         public void TestMethod3()
         {
-            Assert.Catch<Exception>(() => sp.AddDataManually(cubicles, cubicle, personInTeam));
+            Assert.Catch<Exception>(() => dat.AddDataManually(cubicles, cubicle, personInTeam));
 
         }
     }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("OfficeSpaceUnitTest")]
+[assembly: InternalsVisibleTo("Unit_Office_Space")]
 namespace OfficeSpace
 {
-   public  class FindingSpaceForTeam : IFindingSpace
+   internal  class FindingSpaceForTeam : IFindingSpace
     {
         private Dictionary<int, int> dic;
         private int[] cubicles;

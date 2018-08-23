@@ -1,10 +1,10 @@
 ﻿using System;
 using Autofac;
 using OfficeSpace;
-using System.Web.Mvc;
-using Autofac.Integration.Mvc;
 using Autofac.Core;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
 
 static class AutofacConfig
 {

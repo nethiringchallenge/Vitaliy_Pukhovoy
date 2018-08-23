@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Unit_Office_Space")]
 namespace OfficeSpace
 {
-    class FillingData : IFillingData
+   internal class FillingData : IFillingData
     {
         private Dictionary<int, int> dic;
         public FillingData(Dictionary<int, int>  _dic)
